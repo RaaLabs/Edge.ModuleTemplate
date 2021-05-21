@@ -1,4 +1,6 @@
 # Edge.ModuleTemplate
+[![.NET 5.0](https://github.com/RaaLabs/Edge.ModuleTemplate/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/RaaLabs/Edge.ModuleTemplate/actions/workflows/dotnet-core.yml)
+
 The template can be used to initialize new Raa Labs Edge modules. To use it in new repos, select
 it as the "Template Repository" in the dialog that opens when creating a new GitHub repo. All files will be present in the newly created repo.
 
