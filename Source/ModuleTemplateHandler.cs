@@ -27,8 +27,7 @@ namespace RaaLabs.Edge.ModuleTemplate
                 Value = @event.Value,
                 Timestamp = @event.Timestamp
             };
-
-            SendDatapoint(moduleTemplateDatapointOutput);
+            if(@event.Value < _configuration.SampleConfigValue) SendDatapoint(moduleTemplateDatapointOutput);
         }
     }
 }
