@@ -9,10 +9,8 @@ namespace RaaLabs.Edge.ModuleTemplate
 {
     [Name("configuration.json")]
     [RestartOnChange]
-    [ExcludeFromCodeCoverage]
-
     public class ModuleTemplateConfiguration : IConfiguration
     {
-        public int SampleConfigValue { get; }
+        public int SampleConfigValue { get; set; }
     }
 }

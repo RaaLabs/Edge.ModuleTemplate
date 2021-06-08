@@ -7,9 +7,9 @@ using RaaLabs.Edge.Modules.EventHandling;
 
 namespace RaaLabs.Edge.ModuleTemplate
 {
-    public class ModuleTemplateHandler : IConsumeEvent<events.ModuleTemplateDatapointInput>, IProduceEvent<events.ModuleTemplateDatapointOutput>
+    public class ModuleTemplateHandler : IConsumeEvent<Events.ModuleTemplateDatapointInput>, IProduceEvent<Events.ModuleTemplateDatapointOutput>
     {
-        public event EventEmitter<events.ModuleTemplateDatapointOutput> SendDatapoint;
+        public event EventEmitter<Events.ModuleTemplateDatapointOutput> SendDatapoint;
         private readonly ILogger _logger;
         private readonly ModuleTemplateConfiguration _configuration;
 
@@ -19,11 +19,15 @@ namespace RaaLabs.Edge.ModuleTemplate
             _configuration = configuration;
         }
 
-        public void Handle(events.ModuleTemplateDatapointInput @event)
+        public void Handle(Events.ModuleTemplateDatapointInput @event)
         {
-            var moduleTemplateDatapointOutput = new events.ModuleTemplateDatapointOutput();
-
-            SendDatapoint(moduleTemplateDatapointOutput);
+            var moduleTemplateDatapointOutput = new Events.ModuleTemplateDatapointOutput
+            {
+                TimeSeries = @event.TimeSeries,
+                Value = @event.Value,
+                Timestamp = @event.Timestamp
+            };
+            if(@event.Value < _configuration.SampleConfigValue) SendDatapoint(moduleTemplateDatapointOutput);
         }
     }
 }
