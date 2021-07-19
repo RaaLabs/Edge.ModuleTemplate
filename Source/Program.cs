@@ -19,6 +19,7 @@ namespace RaaLabs.Edge.ModuleTemplate
                 .WithModule<Configuration>()
                 .WithModule<EdgeHub>()
                 .WithHandler<ModuleTemplateHandler>()
+                .WithTask<ModuleTemplateTask>()
                 .Build();
 
             application.Run().Wait();
