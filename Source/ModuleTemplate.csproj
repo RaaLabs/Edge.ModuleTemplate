@@ -8,9 +8,9 @@
     <ProjectCapability Include="AzureIoTEdgeModule"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="RaaLabs.Edge" Version="1.4.1"/>
-    <PackageReference Include="RaaLabs.Edge.Modules.EventHandling" Version="1.4.1"/>
-    <PackageReference Include="RaaLabs.Edge.Modules.Configuration" Version="1.4.1"/>
-    <PackageReference Include="RaaLabs.Edge.Modules.EdgeHub" Version="1.4.1"/>
+    <PackageReference Include="RaaLabs.Edge" Version="1.7.2"/>
+    <PackageReference Include="RaaLabs.Edge.Modules.EventHandling" Version="1.7.2"/>
+    <PackageReference Include="RaaLabs.Edge.Modules.Configuration" Version="1.7.2"/>
+    <PackageReference Include="RaaLabs.Edge.Modules.EdgeHub" Version="1.7.2"/>
   </ItemGroup>
 </Project>
