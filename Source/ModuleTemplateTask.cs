@@ -10,7 +10,7 @@ namespace RaaLabs.Edge.ModuleTemplate
     {
         public async Task Run()
         {
-
+            await Task.Delay(1);
         }
     }
 }
