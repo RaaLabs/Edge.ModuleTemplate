@@ -16,3 +16,4 @@ docker run moduletemplate:test-tag
 ````
 
 You should see initial logs that the handlers are started.
+A good way of starting the work on the new modules is a global search and replace, where you replace `ModuleTemplate` with your module name.
