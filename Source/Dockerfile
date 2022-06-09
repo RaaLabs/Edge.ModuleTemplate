@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine3.13 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine3.15 AS build-env
 WORKDIR /app
 
 VOLUME [ "/app/config" ]
@@ -11,7 +11,7 @@ RUN dotnet restore --runtime alpine-x64
 
 RUN dotnet publish -c Release -o out --no-restore 
 
-FROM mcr.microsoft.com/dotnet/runtime:5.0-alpine3.13
+FROM mcr.microsoft.com/dotnet/runtime:5.0-alpine3.15
 WORKDIR /app
 COPY --from=build-env /app/Source/out ./
 
